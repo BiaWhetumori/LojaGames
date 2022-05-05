@@ -48,7 +48,7 @@ public class Produto {
 	private String foto;
 
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
 
 
