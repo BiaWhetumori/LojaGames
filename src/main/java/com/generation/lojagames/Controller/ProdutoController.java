@@ -1,4 +1,4 @@
-package com.generation.lojagames.Controller;
+package com.generation.lojagames.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.lojagames.Repository.CategoriaRepository;
-import com.generation.lojagames.Repository.ProdutoRepository;
 import com.generation.lojagames.model.Produto;
+import com.generation.lojagames.repository.CategoriaRepository;
+import com.generation.lojagames.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
@@ -75,11 +75,11 @@ public class ProdutoController {
 				})
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@GetMapping("/preco_maior/{preco}")
+	@GetMapping("/preco/maior/{preco}")
 	public ResponseEntity<List<Produto>> getPrecoMaiorQue(@PathVariable BigDecimal preco){ 
 		return ResponseEntity.ok(produtoRepository.findByPrecoGreaterThanOrderByPreco(preco));
 	}
-	@GetMapping("/preco_menor/{preco}")
+	@GetMapping("/preco/menor/{preco}")
 	public ResponseEntity<List<Produto>> getPrecoMenorQue(@PathVariable BigDecimal preco){ 
 		return ResponseEntity.ok(produtoRepository.findByPrecoLessThanOrderByPrecoDesc(preco));
 	}

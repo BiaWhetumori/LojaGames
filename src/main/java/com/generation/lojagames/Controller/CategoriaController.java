@@ -1,4 +1,4 @@
-package com.generation.lojagames.Controller;
+package com.generation.lojagames.controller;
 
 import java.util.List;
 
@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.generation.lojagames.Repository.CategoriaRepository;
+
 import com.generation.lojagames.model.Categoria;
+import com.generation.lojagames.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categoria")
